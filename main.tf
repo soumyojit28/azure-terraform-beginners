@@ -12,7 +12,7 @@
 # The latest version of the Azure provider breaks backward compatibility.
 # TODO: Update this code to use the latest provider.
 provider "azurerm" {
-  version = "=1.44.0"
+  features {}
 }
 
 # First we'll create a resource group. In Azure every resource belongs to a 
@@ -24,9 +24,3 @@ resource "azurerm_resource_group" "tf_azure_guide" {
   location = "${var.location}"
 }
 
-# The next resource is a Virtual Network. We can dynamically place it into the
-# resource group without knowing its name ahead of time. Terraform handles all
-# of that for you, so everything is named consistently every time. Say goodbye
-# to weirdly-named mystery resources in your Azure Portal. To see how all this
-# works visually, run `terraform graph` and copy the output into the online
-# GraphViz tool: http://www.webgraphviz.com/
